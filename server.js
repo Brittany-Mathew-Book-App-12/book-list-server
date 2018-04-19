@@ -4,7 +4,9 @@
 const express = require('express');
 const cors = require('cors');
 const pg = require('pg');
-const DATABASE_URL = 'postgres://postgres:y7t6r5E@localhost:5432/books_app';
+// const DATABASE_URL = 'postgres://localhost:5432/books_app';
+const DATABASE_URL = 'postgres://localhost/books_app';
+
 
 // Application Setup
 const app = express();
@@ -18,6 +20,9 @@ client.on('error', err => console.error(err));
 
 // Application Middleware
 app.use(cors());
+
+
+app.use(express.static('../book-list-client'))
 
 // API Endpoints
 app.get('/api/v1/books/', (req, res) => {

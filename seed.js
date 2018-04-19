@@ -56,7 +56,7 @@ function loadBooks() {
 }
 function loadDB() {
   client.query(`
-      CREATE TABLE IF NOT EXISTS books (
+      CREATE TABLE IF NOT EXISTS books_app (
         book_id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         author VARCHAR(255) NOT NULL,
